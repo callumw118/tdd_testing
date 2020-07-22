@@ -25,5 +25,5 @@ def password_includes_upper_char(password):
             return True
 
 def password_acceptable(password):
-    if password_length(password) > 8 and password_includes_special_chars(password):
+    if password_length(password) > 8 and password_includes_special_chars(password) and password_includes_upper_char(password):
         return True
