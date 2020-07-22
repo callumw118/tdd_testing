@@ -19,6 +19,11 @@ def password_includes_special_chars(password):
             if char == special_char:
                 return True
 
+def password_includes_upper_char(password):
+    for char in password:
+        if char == char.upper():
+            return True
+
 def password_acceptable(password):
     if password_length(password) > 8 and password_includes_special_chars(password):
         return True
