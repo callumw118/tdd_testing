@@ -18,3 +18,7 @@ def password_includes_special_chars(password):
         for special_char in special_chars:
             if char == special_char:
                 return True
+
+def password_acceptable(password):
+    if password_length(password) > 8 and password_includes_special_chars(password):
+        return True

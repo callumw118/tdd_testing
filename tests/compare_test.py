@@ -1,5 +1,5 @@
 import unittest
-from src.compare import compare, can_divide_by, password_length, password_includes_special_chars
+from src.compare import compare, can_divide_by, password_length, password_includes_special_chars, password_acceptable
 
 class TestCompare(unittest.TestCase):
     def test_compare_3_1_returns_3_is_greater_than_1(self):
@@ -20,5 +20,14 @@ class TestCompare(unittest.TestCase):
     def test_password_length(self):
         self.assertEqual(8, password_length("password"))
 
-    def test_password_special_chars_more_than_1(self):
+    def test_password_has_special_chars_true(self):
         self.assertTrue(password_includes_special_chars("password."))
+
+    def test_password_has_special_chars_false(self):
+        self.assertFalse(password_includes_special_chars("password"))
+
+    def test_is_password_acceptable_true(self):
+        self.assertTrue(password_acceptable("password."))
+
+    def test_is_password_acceptable_false(self):
+        self.assertFalse(password_acceptable("pass."))
