@@ -1,5 +1,5 @@
 import unittest
-from src.compare import compare, can_divide_by, password_length
+from src.compare import compare, can_divide_by, password_length, password_includes_special_chars
 
 class TestCompare(unittest.TestCase):
     def test_compare_3_1_returns_3_is_greater_than_1(self):
@@ -16,3 +16,9 @@ class TestCompare(unittest.TestCase):
 
     def test_if_nums_are_divisible_false(self):
         self.assertFalse(can_divide_by(5,4))
+
+    def test_password_length(self):
+        self.assertEqual(8, password_length("password"))
+
+    def test_password_special_chars_more_than_1(self):
+        self.assertTrue(password_includes_special_chars("password."))

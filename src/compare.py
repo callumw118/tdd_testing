@@ -8,3 +8,13 @@ def compare(num_1, num_2):
 
 def can_divide_by(num_1, num_2):
     return num_1 % num_2 == 0
+
+def password_length(password):
+    return len(password)
+
+def password_includes_special_chars(password):
+    special_chars = [".", "!", "£", "$", "%", "&", "*"]
+    for char in password:
+        for special_char in special_chars:
+            if char == special_char:
+                return True
